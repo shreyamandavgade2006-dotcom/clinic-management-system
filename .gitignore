@@ -1,0 +1,38 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# env
+.env
+.env.local
+.env.*.local
+
+# builds
+dist/
+build/
+out/
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# editor / os
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# runtime data
+server/.data/
+coverage/
+.nyc_output/
+
+# misc
+.cache/
+.temp/
+tmp/
