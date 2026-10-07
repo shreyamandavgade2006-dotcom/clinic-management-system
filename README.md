@@ -72,7 +72,7 @@ A complete **MERN** (MongoDB · Express · React · Node) student management pla
 ## Quick start
 
 ```bash
-# 1. install dependencies for root, server and client
+# 1. install dependencies for root, server and client (one command)
 npm run install:all
 
 # 2. (optional) configure env — everything has a working default
@@ -98,7 +98,9 @@ npm run build        # builds client/dist
 npm start            # serves the API (serve client/dist with any static host)
 ```
 
-Requirements: **Node 18+** and npm. MongoDB is optional — see [storage modes](#storage-modes).
+Requirements: **Node 18+** and npm (`node -v` to check; get it from [nodejs.org](https://nodejs.org) → LTS). MongoDB is optional — see [storage modes](#storage-modes).
+
+> **Windows tip:** open the project folder in File Explorer, click the address bar, type `cmd` and press Enter — that opens a terminal already inside the project. Use Command Prompt if PowerShell blocks `npm` with a script-execution policy error.
 
 ---
 
@@ -327,3 +329,4 @@ Both areas are wrapped in `ProtectedRoute` (JWT + role check) and share the `App
 | Login returns 401 | Wrong credentials, or the seeded demo store was reset — restart the API to reseed. |
 | Client cannot reach the API | The Vite dev server proxies `/api`; make sure the API runs on port 5000 (or update `vite.config.js`). |
 | Port already in use | Change `PORT` (server) or run `npm run dev:client -- --port 5174`. |
+| `sh: concurrently: not found` when running `npm run dev` | Root tools were not installed — run `npm install` in the project root once, then `npm run dev` again (fixed in current versions of `install:all`). |
