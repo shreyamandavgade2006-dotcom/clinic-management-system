@@ -76,6 +76,7 @@ const teacherDashboard = async (req, res) => {
       designation: req.teacher.designation,
       department: req.teacher.department,
       classes: req.teacher.classes || [],
+      classCount: (req.teacher.classes || []).length,
       name: req.user.name,
     },
     ...overview,

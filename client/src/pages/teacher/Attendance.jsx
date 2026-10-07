@@ -63,7 +63,9 @@ export default function TeacherAttendance() {
         const list = result.data || [];
         setSubjects(list);
         if (list[0]) setSubjectId(list[0]._id);
-        setClasses([...new Set(list.map((subject) => subject.className))]);
+        const uniqueClasses = [...new Set(list.map((subject) => subject.className))];
+        setClasses(uniqueClasses);
+        setClassName((current) => current || uniqueClasses[0] || '');
       })
       .catch((error) => toast(error.message, 'error'))
       .finally(() => setLoading(false));

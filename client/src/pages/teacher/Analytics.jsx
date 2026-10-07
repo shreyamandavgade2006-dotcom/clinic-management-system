@@ -107,7 +107,7 @@ export default function TeacherAnalytics() {
 
       {overview ? (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          <StatCard label="Students taught" value={overview.studentCount} hint={`${overview.classCount} classes · ${overview.subjectCount} subjects`} icon={Users} tone="brand" />
+          <StatCard label="Students taught" value={overview.studentCount} hint={`${overview.classCount ?? overview.classes?.length ?? 0} classes · ${overview.subjectCount} subjects`} icon={Users} tone="brand" />
           <StatCard label="Attendance" value={pct(overview.attendance?.percentage || 0)} hint={`${overview.attendance?.totalSessions || 0} sessions marked`} icon={ClipboardCheck} tone="success" trend={<ProgressBar value={overview.attendance?.percentage || 0} />} />
           <StatCard label="Class average" value={pct(performance?.classAverage || 0)} hint={`Pass rate ${performance?.passPercentage || 0}%`} icon={TrendingUp} tone="purple" />
           <StatCard label="Below 75%" value={overview.defaultersCount} hint="Attendance defaulters" icon={Award} tone={overview.defaultersCount ? 'danger' : 'success'} />

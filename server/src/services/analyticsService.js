@@ -481,6 +481,7 @@ async function teacherOverview(teacher) {
 
   return {
     classes,
+    classCount: classes.length,
     subjectCount: subjects.length,
     studentCount,
     attendance: overall,
