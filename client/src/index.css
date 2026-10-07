@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-800 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-ink-300;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-400;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-ink-200/70 bg-white shadow-card;
+  }
+
+  .card-pad {
+    @apply p-5 sm:p-6;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2
+      disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:bg-brand-800;
+  }
+  .btn-secondary {
+    @apply btn border border-ink-200 bg-white text-ink-700 hover:bg-ink-50;
+  }
+  .btn-ghost {
+    @apply btn text-ink-600 hover:bg-ink-100;
+  }
+  .btn-danger {
+    @apply btn bg-danger-500 text-white hover:bg-danger-600;
+  }
+  .btn-success {
+    @apply btn bg-success-500 text-white hover:bg-success-600;
+  }
+  .btn-whatsapp {
+    @apply btn bg-whatsapp-500 text-white hover:bg-whatsapp-600;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-800
+      placeholder:text-ink-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100
+      disabled:bg-ink-50 disabled:text-ink-500;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-500;
+  }
+  .help {
+    @apply mt-1 text-xs text-ink-400;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .table-wrapper {
+    @apply w-full overflow-x-auto rounded-2xl border border-ink-200/70 bg-white shadow-card;
+  }
+  .table {
+    @apply w-full min-w-[640px] border-collapse text-left text-sm;
+  }
+  .table thead th {
+    @apply sticky top-0 z-10 whitespace-nowrap border-b border-ink-200 bg-ink-50/90 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-ink-500 backdrop-blur;
+  }
+  .table tbody td {
+    @apply border-b border-ink-100 px-4 py-3 align-middle text-ink-700;
+  }
+  .table tbody tr:hover {
+    @apply bg-brand-50/40;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-ink-600 transition
+      hover:bg-white/70 hover:text-brand-700;
+  }
+  .sidebar-link-active {
+    @apply bg-white text-brand-700 shadow-sm ring-1 ring-brand-100;
+  }
+
+  .skeleton {
+    @apply rounded-lg bg-gradient-to-r from-ink-100 via-ink-200 to-ink-100;
+    background-size: 500px 100%;
+    @apply animate-shimmer;
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background-image: linear-gradient(135deg, #4f46e5 0%, #7c3aed 45%, #0ea5e9 100%);
+  }
+  .gradient-mesh {
+    background-image:
+      radial-gradient(at 12% 18%, rgba(99, 102, 241, 0.35) 0px, transparent 55%),
+      radial-gradient(at 88% 8%, rgba(14, 165, 233, 0.32) 0px, transparent 50%),
+      radial-gradient(at 65% 92%, rgba(236, 72, 153, 0.28) 0px, transparent 50%);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
